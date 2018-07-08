@@ -5,5 +5,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
+      chrome.browserAction.setBadgeText({text: "NEW"})
     }
 );
