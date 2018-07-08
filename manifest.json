@@ -1,6 +1,6 @@
 {
   "name": "GradIntel Tracker",
-  "manifest_version": 1,
+  "manifest_version": 2,
   "version": "0.0.1",
   "background": {
     "scripts": ["jquery-3.2.1.min.js", "background.js"]
@@ -9,13 +9,12 @@
       "default_icon": "download.png"
   },
   "permissions": ["activeTab", "background",
-    "system.storage", "system.memory", "system.display", "storage", "pageCapture",
-     "https://gradintel.com/index.php/my-page"
+    "cookies", "*://*.gradintel.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://gradintel.com/index.php/my-page"
+        "*://*.gradintel.com/*"
       ],
       "js": ["jquery-3.2.1.min.js", "foreground.js"],
       "run_at": "document_end"
